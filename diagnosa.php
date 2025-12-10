@@ -53,7 +53,28 @@ $diseases = [
         "causes" => "Infeksi H. pylori, merokok, diet tinggi makanan asin dan diasap, riwayat keluarga, polip lambung.",
         "prevention" => "Konsumsi makanan sehat kaya serat dan antioksidan, hindari makanan asap dan diawetkan, berhenti merokok, dan lakukan pemeriksaan rutin jika memiliki riwayat keluarga.",
         "treatment" => "Operasi, kemoterapi, radioterapi, terapi target, imunoterapi tergantung pada stadium kanker."
-    ]
+    ],
+    "A06" => [
+        "name" => "Dispepsia (Maag Fungsional)",
+        "description" => "sakit perut tanpa adanya luka (ulkus) dan tidak disertai penyebab yang jelas. Sakit perut jenis ini umum terjadi dan dapat berlangsung dalam jangka waktu panjang.",
+        "causes" => "Makan terlalu cepat, stres, konsumsi makanan pedas atau berlemak, konsumsi kafein atau alkohol berlebihan.",
+        "prevention" => "Makan dengan porsi kecil namun sering, hindari makanan pemicu, kelola stres dengan baik, dan hindari merokok.",
+        "treatment" => "Obat antasida, penghambat pompa proton, perubahan pola makan dan gaya hidup."
+    ],
+    "A07" => [
+        "name" => "Penyakit Celiac",
+        "description" => "Gangguan autoimun di mana konsumsi gluten menyebabkan kerusakan pada usus kecil.",
+        "causes" => "Faktor genetik, konsumsi gluten pada individu yang rentan.",
+        "prevention" => "Hindari makanan yang mengandung gluten seperti gandum, barley, dan rye.",
+        "treatment" => "Diet bebas gluten seumur hidup."
+    ],
+    "A00" => [
+        "name" => "Tidak Terdiagnosa",
+        "description" => "Gejala yang Anda pilih tidak cocok dengan penyakit lambung yang ada dalam sistem kami.",
+        "causes" => "Gejala yang tidak spesifik atau kombinasi gejala yang tidak terdeteksi.",
+        "prevention" => "Konsultasikan dengan dokter untuk pemeriksaan lebih lanjut.",
+        "treatment" => "Pemeriksaan medis lebih lanjut diperlukan untuk diagnosis yang akurat."
+    ],
 ];
 
 // Rules berdasarkan penelitian
@@ -62,7 +83,18 @@ $rules = [
     ["id" => "Z2", "conditions" => ["G01", "G02", "G03", "G10", "G15"], "conclusion" => "A02"],
     ["id" => "Z3", "conditions" => ["G01", "G03", "G05", "G09", "G12"], "conclusion" => "A03"],
     ["id" => "Z4", "conditions" => ["G01", "G02", "G07", "G08"], "conclusion" => "A04"],
-    ["id" => "Z5", "conditions" => ["G02", "G03", "G06", "G13", "G14", "G15"], "conclusion" => "A05"]
+    ["id" => "Z5", "conditions" => ["G02", "G03", "G06", "G13", "G14", "G15"], "conclusion" => "A05"],
+    ["id" => "Z6", "conditions" => ["G01", "G02", "G03", "G04", "G05", "G10", "G12"], "conclusion" => "A04"],
+    ["id" => "Z7", "conditions" => ["G01", "G02", "G07", "G10", "G14", "G15"], "conclusion" => "A01"],
+    ["id" => "Z8", "conditions" => ["G01", "G03", "G04", "G08", "G10", "G12"], "conclusion" => "A06"],
+    ["id" => "Z9", "conditions" => ["G01", "G04", "G09", "G10"], "conclusion" => "A03"],
+    ["id" => "Z10", "conditions" => ["G03", "G04", "G05", "G08", "G09", "G12"], "conclusion" => "A03"],
+    ["id" => "Z11", "conditions" => ["G01", "G02", "G06", "G07", "G13", "G15"], "conclusion" => "A01"],
+    ["id" => "Z12", "conditions" => ["G01", "G03", "G08", "G10", "G11"], "conclusion" => "A02"],
+    ["id" => "Z13", "conditions" => ["G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11", "G12", "G13", "G14", "G15"], "conclusion" => "A00"],
+
+
+
 ];
 
 // Fungsi diagnosa menggunakan metode Forward Chaining
